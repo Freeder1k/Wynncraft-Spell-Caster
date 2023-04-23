@@ -7,7 +7,8 @@
   "key.wynncraft-spell-caster.config": "Open Config",
 
   "screen.wynncraft-spell-caster.config.title" : "Wynncraft Spell Caster Config",
-  "config.wynncraft-spell-caster.option.left-interval": "Left Click Interval",
-  "config.wynncraft-spell-caster.option.right-interval": "Right Click Interval",
+  "config.wynncraft-spell-caster.option.left-interval": "Left Click Interval (Ticks)",
+  "config.wynncraft-spell-caster.option.right-interval": "Right Click Interval (Ticks)",
+  "config.wynncraft-spell-caster.option.queue-size": "Spell Queue Size",
   "config.wynncraft-spell-caster.option.invert-clicks": "Invert Clicks (Archer Mode)"
 }
