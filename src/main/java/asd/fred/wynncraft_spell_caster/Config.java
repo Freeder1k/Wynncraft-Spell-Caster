@@ -85,7 +85,7 @@ public class Config implements ModMenuApi {
         }
 
         public static ConfigData getDefault() {
-            return new ConfigData(0, 2, 2,false);
+            return new ConfigData(0, 2, 1, false);
         }
 
         public void save() {
