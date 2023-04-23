@@ -17,11 +17,11 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "asd.fred.wynncraft_spell_caster.WynncraftSpellCasterMod"
-    ],
     "client": [
       "asd.fred.wynncraft_spell_caster.WynncraftSpellCasterClient"
+    ],
+    "modmenu": [
+      "asd.fred.wynncraft_spell_caster.Config"
     ]
   },
 
