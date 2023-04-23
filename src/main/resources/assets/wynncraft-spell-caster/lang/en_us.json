@@ -1,9 +1,9 @@
 {
   "key.category.spell": "Wynncraft Spell Caster",
-  "key.wynncraft-spell-caster.spell.first": "Cast First Spell",
-  "key.wynncraft-spell-caster.spell.second": "Cast Second Spell",
-  "key.wynncraft-spell-caster.spell.third": "Cast Third Spell",
-  "key.wynncraft-spell-caster.spell.fourth": "Cast Fourth Spell",
+  "key.wynncraft-spell-caster.spell.first": "Cast 1st Spell",
+  "key.wynncraft-spell-caster.spell.second": "Cast 2nd Spell",
+  "key.wynncraft-spell-caster.spell.third": "Cast 3rd Spell",
+  "key.wynncraft-spell-caster.spell.fourth": "Cast 4th Spell",
   "key.wynncraft-spell-caster.config": "Open Config",
 
   "screen.wynncraft-spell-caster.config.title" : "Wynncraft Spell Caster Config",

@@ -30,6 +30,8 @@
     "fabric-api": "*",
     "minecraft": "~1.19.4",
     "java": ">=17",
-    "fabric-key-binding-api-v1": "*"
+    "fabric-key-binding-api-v1": "*",
+    "cloth-config": "10.0.96",
+    "modmenu": "6.2.1"
   }
 }
