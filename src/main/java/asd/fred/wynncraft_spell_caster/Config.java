@@ -57,8 +57,6 @@ public class Config implements ModMenuApi {
 
         general.addEntry(builder.entryBuilder().startIntSlider(Text.translatable("config.wynncraft-spell-caster.option.right-interval"), config_data.right_interval, 0, 20).setDefaultValue(2).setTooltip(Text.of("Set the amount of ticks to wait after a right click.")).setSaveConsumer(newValue -> config_data.right_interval = newValue).build());
 
-        general.addEntry(builder.entryBuilder().startIntSlider(Text.translatable("config.wynncraft-spell-caster.option.queue-size"), config_data.queue_size, 0, 20).setDefaultValue(1).setTooltip(Text.of("Set how many extra spells the spell queue can hold.")).setSaveConsumer(newValue -> config_data.queue_size = newValue).build());
-
         general.addEntry(builder.entryBuilder().startBooleanToggle(Text.translatable("config.wynncraft-spell-caster.option.invert-clicks"), config_data.invert_clicks).setDefaultValue(false).setTooltip(Text.of("Set this to True if playing on archer.")).setSaveConsumer(newValue -> config_data.invert_clicks = newValue).build());
 
         builder.setSavingRunnable(config_data::save);
@@ -74,18 +72,16 @@ public class Config implements ModMenuApi {
     public static class ConfigData {
         public int left_interval;
         public int right_interval;
-        public int queue_size;
         public boolean invert_clicks;
 
-        public ConfigData(int left_interval, int right_interval, int queue_size, boolean invert_clicks) {
+        public ConfigData(int left_interval, int right_interval, boolean invert_clicks) {
             this.left_interval = left_interval;
             this.right_interval = right_interval;
-            this.queue_size = queue_size;
             this.invert_clicks = invert_clicks;
         }
 
         public static ConfigData getDefault() {
-            return new ConfigData(0, 2, 1, false);
+            return new ConfigData(0, 2, false);
         }
 
         public void save() {
