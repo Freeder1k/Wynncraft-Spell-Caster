@@ -1,38 +1,35 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "wynncraft-spell-caster",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Wynncraft Spell Caster",
+  "description": "A configurable spell macro mod for Wynncraft.",
   "authors": [
-    "Me!"
+    "Frederik"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/Freeder1k/Wynncraft-Spell-Caster"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/wynncraft-spell-caster/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "asd.fred.wynncraft_spell_caster.WynncraftSpellCasterMod"
+    ],
+    "client": [
+      "asd.fred.wynncraft_spell_caster.WynncraftSpellCasterClient"
     ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
 
   "depends": {
     "fabricloader": ">=0.14.17",
     "fabric-api": "*",
     "minecraft": "~1.19.4",
-    "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
+    "java": ">=17",
+    "fabric-key-binding-api-v1": "*"
   }
 }
