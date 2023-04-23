@@ -28,13 +28,13 @@ public class Config implements ModMenuApi {
             if (!Files.exists(config_file)) {
                 Files.createDirectories(config_dir);
                 Files.createFile(config_file);
-                config_data = new ConfigData(1, 2, false);
+                config_data = new ConfigData(1, 3, false);
                 config_data.save();
                 return config_data;
             }
         } catch (IOException e) {
             e.printStackTrace();
-            config_data = new ConfigData(1, 2, false);
+            config_data = new ConfigData(1, 3, false);
             return config_data;
         }
         try {
@@ -43,7 +43,7 @@ public class Config implements ModMenuApi {
             config_data = gson.fromJson(reader, ConfigData.class);
         } catch (IOException e) {
             e.printStackTrace();
-            config_data = new ConfigData(1, 2, false);
+            config_data = new ConfigData(1, 3, false);
         }
         return config_data;
     }
@@ -55,7 +55,7 @@ public class Config implements ModMenuApi {
 
         general.addEntry(builder.entryBuilder().startIntSlider(Text.translatable("config.wynncraft-spell-caster.option.left-interval"), config_data.left_interval, 1, 20).setDefaultValue(1).setTooltip(Text.of("Set the amount of ticks to wait after a left click.")).setSaveConsumer(newValue -> config_data.left_interval = newValue).build());
 
-        general.addEntry(builder.entryBuilder().startIntSlider(Text.translatable("config.wynncraft-spell-caster.option.right-interval"), config_data.right_interval, 1, 20).setDefaultValue(2).setTooltip(Text.of("Set the amount of ticks to wait after a right click.")).setSaveConsumer(newValue -> config_data.right_interval = newValue).build());
+        general.addEntry(builder.entryBuilder().startIntSlider(Text.translatable("config.wynncraft-spell-caster.option.right-interval"), config_data.right_interval, 1, 20).setDefaultValue(3).setTooltip(Text.of("Set the amount of ticks to wait after a right click.")).setSaveConsumer(newValue -> config_data.right_interval = newValue).build());
 
         general.addEntry(builder.entryBuilder().startBooleanToggle(Text.translatable("config.wynncraft-spell-caster.option.invert-clicks"), config_data.invert_clicks).setDefaultValue(false).setTooltip(Text.of("Set this to True if playing on archer.")).setSaveConsumer(newValue -> config_data.invert_clicks = newValue).build());
 
