@@ -53,9 +53,9 @@ public class Config implements ModMenuApi {
 
         ConfigCategory general = builder.getOrCreateCategory(Text.translatable("General Config"));
 
-        general.addEntry(builder.entryBuilder().startIntSlider(Text.translatable("config.wynncraft-spell-caster.option.left-interval"), config_data.left_interval, 0, 20).setDefaultValue(0).setTooltip(Text.of("Set the amount of ticks to wait after a left click.")).setSaveConsumer(newValue -> config_data.left_interval = newValue).build());
+        general.addEntry(builder.entryBuilder().startIntSlider(Text.translatable("config.wynncraft-spell-caster.option.left-interval_ms"), config_data.left_interval_ms, 0, 1000).setDefaultValue(100).setTooltip(Text.of("Set the amount of milliseconds to wait after a left click.")).setSaveConsumer(newValue -> config_data.left_interval_ms = newValue).build());
 
-        general.addEntry(builder.entryBuilder().startIntSlider(Text.translatable("config.wynncraft-spell-caster.option.right-interval"), config_data.right_interval, 0, 20).setDefaultValue(2).setTooltip(Text.of("Set the amount of ticks to wait after a right click.")).setSaveConsumer(newValue -> config_data.right_interval = newValue).build());
+        general.addEntry(builder.entryBuilder().startIntSlider(Text.translatable("config.wynncraft-spell-caster.option.right-interval_ms"), config_data.right_interval_ms, 0, 1000).setDefaultValue(100).setTooltip(Text.of("Set the amount of milliseconds to wait after a right click.")).setSaveConsumer(newValue -> config_data.right_interval_ms = newValue).build());
 
         general.addEntry(builder.entryBuilder().startBooleanToggle(Text.translatable("config.wynncraft-spell-caster.option.invert-clicks"), config_data.invert_clicks).setDefaultValue(false).setTooltip(Text.of("Set this to True if playing on archer.")).setSaveConsumer(newValue -> config_data.invert_clicks = newValue).build());
 
@@ -70,18 +70,18 @@ public class Config implements ModMenuApi {
     }
 
     public static class ConfigData {
-        public int left_interval;
-        public int right_interval;
+        public int left_interval_ms;
+        public int right_interval_ms;
         public boolean invert_clicks;
 
-        public ConfigData(int left_interval, int right_interval, boolean invert_clicks) {
-            this.left_interval = left_interval;
-            this.right_interval = right_interval;
+        public ConfigData(int left_interval_ms, int right_interval_ms, boolean invert_clicks) {
+            this.left_interval_ms = left_interval_ms;
+            this.right_interval_ms = right_interval_ms;
             this.invert_clicks = invert_clicks;
         }
 
         public static ConfigData getDefault() {
-            return new ConfigData(0, 2, false);
+            return new ConfigData(100, 100, false);
         }
 
         public void save() {
