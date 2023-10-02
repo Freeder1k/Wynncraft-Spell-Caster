@@ -11,8 +11,10 @@ If you are playing on archer you have to enable the invert clicks option!
 
 ## Installation and Use:
 ---
+To install simply download the [latest release jar](https://github.com/Freeder1k/Wynncraft-Spell-Caster/releases) and put it in your mods folder.
+
 **This mod runs on Minecraft Fabric 1.19.4.**
 
 Additionally, the following mods are required:
-- Cloth Config API
-- Mod Menu
+- [Cloth Config API](https://modrinth.com/mod/cloth-config)
+- [Mod Menu](https://modrinth.com/mod/modmenu)
