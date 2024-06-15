@@ -15,7 +15,7 @@ public class Utils {
         List<Text> tooltip = heldItem.getTooltip(client.player, TooltipContext.BASIC);
 
         for (Text line : tooltip) {
-            if (line.contains(Text.literal("Archer/Hunter")))
+            if (line.getString().contains("Archer/Hunter"))
                 return true;
         }
         return false;
