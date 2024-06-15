@@ -1,13 +1,13 @@
 # Wynncraft Spell Caster
 ---
-This mod add configurable spell macros to the game. 
+This mod adds configurable spell macros to the game. 
 The keybinds for each spell can be set in the keybinds menu.
 
 To open the Wynncraft Spell Caster Config either set a settings keybind or navigate through the modmenu.
 
 The click interval is how long to wait after a click.
 
-If you are playing on archer you have to enable the invert clicks option!
+Archer is detected automatically if you're holding a bow.
 
 ## Installation and Use:
 ---
