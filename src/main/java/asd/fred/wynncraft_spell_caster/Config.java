@@ -57,8 +57,6 @@ public class Config implements ModMenuApi {
 
         general.addEntry(builder.entryBuilder().startIntSlider(Text.translatable("config.wynncraft-spell-caster.option.right-interval_ms"), config_data.right_interval_ms, 0, 1000).setDefaultValue(100).setTooltip(Text.of("Set the amount of milliseconds to wait after a right click.")).setSaveConsumer(newValue -> config_data.right_interval_ms = newValue).build());
 
-        general.addEntry(builder.entryBuilder().startBooleanToggle(Text.translatable("config.wynncraft-spell-caster.option.invert-clicks"), config_data.invert_clicks).setDefaultValue(false).setTooltip(Text.of("Set this to True if playing on archer.")).setSaveConsumer(newValue -> config_data.invert_clicks = newValue).build());
-
         builder.setSavingRunnable(config_data::save);
 
         return builder.build();
@@ -72,12 +70,10 @@ public class Config implements ModMenuApi {
     public static class ConfigData {
         public int left_interval_ms;
         public int right_interval_ms;
-        public boolean invert_clicks;
 
         public ConfigData(int left_interval_ms, int right_interval_ms, boolean invert_clicks) {
             this.left_interval_ms = left_interval_ms;
             this.right_interval_ms = right_interval_ms;
-            this.invert_clicks = invert_clicks;
         }
 
         public static ConfigData getDefault() {
