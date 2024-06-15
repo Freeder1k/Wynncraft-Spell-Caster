@@ -27,7 +27,11 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
     private static KeyBinding spell1_key, spell2_key, spell3_key, spell4_key;
     private static KeyBinding config_key;
     private static ClickQueue clickQueue;
+    private static WynncraftSpellCasterClient instance = null;
 
+    public WynncraftSpellCasterClient getInstance() {
+        return instance;
+    }
 
     @Override
     public void onInitializeClient() {
@@ -36,6 +40,7 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
         ClientLifecycleEvents.CLIENT_STARTED.register(this);
         ClientTickEvents.END_CLIENT_TICK.register(this);
         ClientLifecycleEvents.CLIENT_STOPPING.register(this);
+        instance = this;
     }
 
     @Override
