@@ -8,5 +8,5 @@
 
   "screen.wynncraft-spell-caster.config.title" : "Wynncraft Spell Caster Config",
   "config.wynncraft-spell-caster.option.left-interval_ms": "Left Click Interval [ms]",
-  "config.wynncraft-spell-caster.option.right-interval_ms": "Right Click Interval [ms]",
+  "config.wynncraft-spell-caster.option.right-interval_ms": "Right Click Interval [ms]"
 }
