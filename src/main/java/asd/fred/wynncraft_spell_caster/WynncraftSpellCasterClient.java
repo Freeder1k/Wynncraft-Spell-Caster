@@ -24,9 +24,9 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
     public static KeyBinding attack_key;
     public static KeyBinding use_key;
     public static Config.ConfigData config_data;
-    private static KeyBinding spell1_key, spell2_key, spell3_key, spell4_key;
-    private static KeyBinding config_key;
-    private static ClickQueue clickQueue;
+    public static KeyBinding spell1_key, spell2_key, spell3_key, spell4_key;
+    public static KeyBinding config_key;
+    public static ClickQueue clickQueue;
     private static WynncraftSpellCasterClient instance = null;
 
     public WynncraftSpellCasterClient getInstance() {
