@@ -23,15 +23,10 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
     private static final List<Boolean> spell4_clicks = Arrays.asList(true, true, false);
     public static KeyBinding attack_key;
     public static KeyBinding use_key;
-    public static Config.ConfigData config_data;
     public static KeyBinding spell1_key, spell2_key, spell3_key, spell4_key;
     public static KeyBinding config_key;
+    public static Config.ConfigData config_data;
     public static ClickQueue clickQueue;
-    private static WynncraftSpellCasterClient instance = null;
-
-    public WynncraftSpellCasterClient getInstance() {
-        return instance;
-    }
 
     @Override
     public void onInitializeClient() {
@@ -40,7 +35,6 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
         ClientLifecycleEvents.CLIENT_STARTED.register(this);
         ClientTickEvents.END_CLIENT_TICK.register(this);
         ClientLifecycleEvents.CLIENT_STOPPING.register(this);
-        instance = this;
     }
 
     @Override
