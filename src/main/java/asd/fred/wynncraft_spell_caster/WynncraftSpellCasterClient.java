@@ -21,9 +21,11 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
     private static final List<Boolean> spell2_clicks = Arrays.asList(true, true, true);
     private static final List<Boolean> spell3_clicks = Arrays.asList(true, false, false);
     private static final List<Boolean> spell4_clicks = Arrays.asList(true, true, false);
+    private static final List<Boolean> attack_clicks = Arrays.asList(false);
     public static KeyBinding attack_key;
     public static KeyBinding use_key;
     public static KeyBinding spell1_key, spell2_key, spell3_key, spell4_key;
+    public static KeyBinding attackQueue_key;
     public static KeyBinding config_key;
     public static Config.ConfigData config_data;
     public static ClickQueue clickQueue;
@@ -60,6 +62,7 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
         checkSpellKey(spell2_key, spell2_clicks);
         checkSpellKey(spell3_key, spell3_clicks);
         checkSpellKey(spell4_key, spell4_clicks);
+        checkSpellKey(attackQueue_key, attack_clicks);
     }
 
     private void registerKeybinds() {
@@ -69,6 +72,7 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
         spell2_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.wynncraft-spell-caster.spell.second", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.category.spell"));
         spell3_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.wynncraft-spell-caster.spell.third", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.category.spell"));
         spell4_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.wynncraft-spell-caster.spell.fourth", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.category.spell"));
+        attackQueue_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.wynncraft-spell-caster.spell.attack_queue", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.category.spell"));
     }
 
     private void checkSpellKey(KeyBinding spell_key, Collection<Boolean> spell_clicks) {
