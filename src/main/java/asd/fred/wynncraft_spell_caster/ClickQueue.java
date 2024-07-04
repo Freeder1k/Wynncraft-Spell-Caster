@@ -54,25 +54,25 @@ public class ClickQueue {
             this.client = client;
         }
 
-        private static void sendAttackPacket(MinecraftClient client) {
+        private void sendAttackPacket() {
             ClientPlayNetworkHandler network_handler = client.getNetworkHandler();
             if (network_handler != null) network_handler.sendPacket(new HandSwingC2SPacket(Hand.MAIN_HAND));
             else WynncraftSpellCasterClient.logger.error("network handler is null");
         }
 
-        private static void sendUsePacket(MinecraftClient client) {
+        private void sendUsePacket() {
             ClientPlayNetworkHandler network_handler = client.getNetworkHandler();
             if (network_handler != null) network_handler.sendPacket(new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, 0));
             else WynncraftSpellCasterClient.logger.error("network handler is null");
         }
 
-        private static void execute_next_click(MinecraftClient client, boolean next_click) throws InterruptedException {
+        private void execute_next_click(boolean next_click) throws InterruptedException {
             if (client.player != null) {
                 if (next_click ^ Utils.isArcher(client)) {
-                    sendUsePacket(client);
+                    sendUsePacket();
                     Thread.sleep(WynncraftSpellCasterClient.config_data.right_interval_ms);
                 } else {
-                    sendAttackPacket(client);
+                    sendAttackPacket();
                     Thread.sleep(WynncraftSpellCasterClient.config_data.left_interval_ms);
                 }
             }
@@ -81,7 +81,7 @@ public class ClickQueue {
         public void run() {
             while (running.get()) {
                 try {
-                    execute_next_click(client, queue.take());
+                    execute_next_click(queue.take());
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

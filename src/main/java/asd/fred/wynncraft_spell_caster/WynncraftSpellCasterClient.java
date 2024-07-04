@@ -21,9 +21,7 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
     private static final List<Boolean> spell2_clicks = Arrays.asList(true, true, true);
     private static final List<Boolean> spell3_clicks = Arrays.asList(true, false, false);
     private static final List<Boolean> spell4_clicks = Arrays.asList(true, true, false);
-    private static final List<Boolean> melee_clicks = Arrays.asList(false);
-    public static KeyBinding attack_key;
-    public static KeyBinding use_key;
+    private static final List<Boolean> melee_clicks = List.of(false);
     public static KeyBinding spell1_key, spell2_key, spell3_key, spell4_key, melee_key;
     public static KeyBinding config_key;
     public static Config.ConfigData config_data;
@@ -40,8 +38,6 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
 
     @Override
     public void onClientStarted(MinecraftClient client) {
-        attack_key = client.options.attackKey;
-        use_key = client.options.useKey;
         clickQueue = new ClickQueue(client);
     }
 
