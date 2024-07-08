@@ -62,7 +62,8 @@ public class ClickQueue {
 
         private void sendUsePacket() {
             ClientPlayNetworkHandler network_handler = client.getNetworkHandler();
-            if (network_handler != null) network_handler.sendPacket(new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, 0));
+            if (network_handler != null && client.player != null) network_handler.sendPacket(new PlayerInteractItemC2SPacket(Hand.MAIN_HAND,
+                    0, client.player.getYaw(), client.player.getPitch()));
             else WynncraftSpellCasterClient.logger.error("network handler is null");
         }
 
