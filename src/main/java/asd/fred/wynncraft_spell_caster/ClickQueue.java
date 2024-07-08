@@ -2,6 +2,7 @@ package asd.fred.wynncraft_spell_caster;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
+import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.c2s.play.HandSwingC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerInteractItemC2SPacket;
 import net.minecraft.util.Hand;
@@ -54,17 +55,23 @@ public class ClickQueue {
             this.client = client;
         }
 
-        private void sendAttackPacket() {
+        private void sendPacket(Packet<?> packet) {
             ClientPlayNetworkHandler network_handler = client.getNetworkHandler();
-            if (network_handler != null) network_handler.sendPacket(new HandSwingC2SPacket(Hand.MAIN_HAND));
-            else WynncraftSpellCasterClient.logger.error("network handler is null");
+            if (network_handler == null)
+                WynncraftSpellCasterClient.logger.error("network handler is null");
+            else
+                network_handler.sendPacket(packet);
+        }
+
+        private void sendAttackPacket() {
+            sendPacket(new HandSwingC2SPacket(Hand.MAIN_HAND));
         }
 
         private void sendUsePacket() {
-            ClientPlayNetworkHandler network_handler = client.getNetworkHandler();
-            if (network_handler != null && client.player != null) network_handler.sendPacket(new PlayerInteractItemC2SPacket(Hand.MAIN_HAND,
-                    0, client.player.getYaw(), client.player.getPitch()));
-            else WynncraftSpellCasterClient.logger.error("network handler is null");
+            if (client.player == null)
+                WynncraftSpellCasterClient.logger.error("player is null");
+            else
+                sendPacket(new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, 0, client.player.getYaw(), client.player.getPitch()));
         }
 
         private void execute_next_click(boolean next_click) throws InterruptedException {
