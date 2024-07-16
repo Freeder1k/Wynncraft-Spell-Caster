@@ -63,6 +63,10 @@ java {
 	targetCompatibility = JavaVersion.VERSION_17
 }
 
+loom {
+    accessWidenerPath = file("src/main/resources/spellcaster.accesswidener")
+}
+
 jar {
 	from("LICENSE") {
 		rename { "${it}_${base.archivesName.get()}"}
