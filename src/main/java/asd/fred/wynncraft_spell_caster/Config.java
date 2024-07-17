@@ -5,6 +5,7 @@ import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
+import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
@@ -53,9 +54,11 @@ public class Config implements ModMenuApi {
 
         ConfigCategory general = builder.getOrCreateCategory(Text.translatable("General Config"));
 
-        general.addEntry(builder.entryBuilder().startIntSlider(Text.translatable("config.wynncraft-spell-caster.option.left-interval_ms"), config_data.left_interval_ms, 0, 1000).setDefaultValue(100).setTooltip(Text.of("Set the amount of milliseconds to wait after a left click.")).setSaveConsumer(newValue -> config_data.left_interval_ms = newValue).build());
+        ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-        general.addEntry(builder.entryBuilder().startIntSlider(Text.translatable("config.wynncraft-spell-caster.option.right-interval_ms"), config_data.right_interval_ms, 0, 1000).setDefaultValue(100).setTooltip(Text.of("Set the amount of milliseconds to wait after a right click.")).setSaveConsumer(newValue -> config_data.right_interval_ms = newValue).build());
+        general.addEntry(entryBuilder.startIntField(Text.translatable("config.wynncraft-spell-caster.option.left-interval_ms"), config_data.left_interval_ms).setDefaultValue(100).setTooltip(Text.of("Set the amount of milliseconds to wait after a left click.")).setSaveConsumer(newValue -> config_data.left_interval_ms = newValue).build());
+
+        general.addEntry(entryBuilder.startIntField(Text.translatable("config.wynncraft-spell-caster.option.right-interval_ms"), config_data.right_interval_ms).setDefaultValue(100).setTooltip(Text.of("Set the amount of milliseconds to wait after a right click.")).setSaveConsumer(newValue -> config_data.right_interval_ms = newValue).build());
 
         builder.setSavingRunnable(config_data::save);
 
