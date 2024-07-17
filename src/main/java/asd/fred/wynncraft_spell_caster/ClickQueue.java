@@ -76,7 +76,12 @@ public class ClickQueue {
                 return;
             }
 
-           interactionManager.sendSequencedPacket(client.world, id -> new PlayerInteractBlockC2SPacket(
+            if (client.world == null) {
+                WynncraftSpellCasterClient.logger.error("world is null");
+                return;
+            }
+
+            interactionManager.sendSequencedPacket(client.world, id -> new PlayerInteractBlockC2SPacket(
                     Hand.MAIN_HAND,
                     new BlockHitResult(
                             client.player.getPos(),
