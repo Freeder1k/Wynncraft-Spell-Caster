@@ -25,6 +25,7 @@
       "asd.fred.wynncraft_spell_caster.Config"
     ]
   },
+  "accessWidener" : "spellcaster.accesswidener",
 
   "depends": {
     "fabricloader": ">=0.14.17",
