@@ -5,6 +5,7 @@ import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.c2s.play.HandSwingC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerInteractBlockC2SPacket;
+import net.minecraft.network.packet.c2s.play.PlayerInteractItemC2SPacket;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 
@@ -69,28 +70,7 @@ public class ClickQueue {
         }
 
         private void sendUsePacket() {
-            var interactionManager = client.interactionManager;
-
-            if (interactionManager == null) {
-                WynncraftSpellCasterClient.logger.error("interaction manager is null");
-                return;
-            }
-
-            if (client.world == null) {
-                WynncraftSpellCasterClient.logger.error("world is null");
-                return;
-            }
-
-            interactionManager.sendSequencedPacket(client.world, id -> new PlayerInteractBlockC2SPacket(
-                    Hand.MAIN_HAND,
-                    new BlockHitResult(
-                            client.player.getPos(),
-                            client.player.getHorizontalFacing(),
-                            client.player.getBlockPos().add(0, 1, 0),
-                            false
-                    ),
-                    id
-            ));
+            sendPacket(new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, 0, client.player.getYaw(), client.player.getPitch()));
         }
 
         private void execute_next_click(boolean next_click) throws InterruptedException {
