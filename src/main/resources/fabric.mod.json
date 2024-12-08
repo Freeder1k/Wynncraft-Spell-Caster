@@ -22,7 +22,7 @@
       "asd.fred.wynncraft_spell_caster.WynncraftSpellCasterClient"
     ],
     "modmenu": [
-      "asd.fred.wynncraft_spell_caster.Config"
+      "asd.fred.wynncraft_spell_caster.ModMenuConfig"
     ]
   },
 
@@ -31,7 +31,9 @@
     "minecraft": "~1.21",
     "java": ">=17",
     "fabric-api": "*",
-    "cloth-config": ">=12.0.108",
+    "cloth-config": ">=12.0.108"
+  },
+  "suggests": {
     "modmenu": ">=8.0.0"
   }
 }

@@ -1,8 +1,6 @@
 package asd.fred.wynncraft_spell_caster;
 
 import com.google.gson.Gson;
-import com.terraformersmc.modmenu.api.ConfigScreenFactory;
-import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
@@ -17,7 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class Config implements ModMenuApi {
+public class Config {
     private static final Path config_dir = Paths.get(MinecraftClient.getInstance().runDirectory.getPath() + "/config");
     private static final Path config_file = Paths.get(config_dir + "/wynncraft-spell-caster.json");
     private static ConfigData config_data;
@@ -63,11 +61,6 @@ public class Config implements ModMenuApi {
         builder.setSavingRunnable(config_data::save);
 
         return builder.build();
-    }
-
-    @Override
-    public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return Config::createConfigScreen;
     }
 
     public static class ConfigData {
