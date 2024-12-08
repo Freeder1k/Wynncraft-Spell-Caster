@@ -72,7 +72,7 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
 
     private void checkSpellKey(KeyBinding spell_key, Collection<Boolean> spell_clicks) {
         if (spell_key.isPressed()) {
-            if (clickQueue.size() < 3)
+            if (clickQueue.isEmpty())
                 clickQueue.add_clicks(spell_clicks);
 
             spell_key.setPressed(false);

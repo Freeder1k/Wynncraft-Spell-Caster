@@ -25,6 +25,10 @@ public class ClickQueue {
         return queue.size();
     }
 
+    public boolean isEmpty() {
+        return queue.isEmpty();
+    }
+
     public int time_remaining() {
         MinecraftClient client = MinecraftClient.getInstance();
 
