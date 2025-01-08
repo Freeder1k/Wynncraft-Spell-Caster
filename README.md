@@ -13,7 +13,7 @@ Archer is detected automatically if you're holding a bow.
 ---
 To install simply download the [latest release jar](https://github.com/Freeder1k/Wynncraft-Spell-Caster/releases) and put it in your mods folder.
 
-**This mod runs on Minecraft Fabric 1.21 & 1.21.1.**
+**This mod runs on Minecraft Fabric 1.21 - 1.21.4.**
 
 Additionally, the following mods are required:
 - [Cloth Config API](https://modrinth.com/mod/cloth-config)
