@@ -10,10 +10,11 @@
     "KiliE"
   ],
   "contact": {
+    "modrinth": "https://modrinth.com/mod/wynncraft-spell-caster",
     "sources": "https://github.com/Freeder1k/Wynncraft-Spell-Caster"
   },
 
-  "license": "CC0-1.0",
+  "license": "Unlicense",
   "icon": "assets/wynncraft-spell-caster/icon.png",
 
   "environment": "*",
