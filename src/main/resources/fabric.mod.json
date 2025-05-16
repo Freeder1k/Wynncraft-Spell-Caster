@@ -6,18 +6,20 @@
   "name": "Wynncraft Spell Caster",
   "description": "A configurable spell macro mod for Wynncraft.",
   "authors": [
-    "Frederik",
-    "KiliE"
+    "Frederik"
+  ],
+  "contributors":[
+    "KiliE",
+    "wiji1"
   ],
   "contact": {
-    "modrinth": "https://modrinth.com/mod/wynncraft-spell-caster",
     "sources": "https://github.com/Freeder1k/Wynncraft-Spell-Caster"
   },
 
   "license": "Unlicense",
   "icon": "assets/wynncraft-spell-caster/icon.png",
 
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "client": [
       "asd.fred.wynncraft_spell_caster.WynncraftSpellCasterClient"
@@ -36,5 +38,13 @@
   },
   "suggests": {
     "modmenu": ">=8.0.0"
+  },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.modrinth": "https://modrinth.com/mod/wynncraft-spell-caster"
+      }
+    }
   }
 }
