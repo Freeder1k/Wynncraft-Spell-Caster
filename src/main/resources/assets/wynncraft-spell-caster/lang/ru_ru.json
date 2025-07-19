@@ -1,0 +1,13 @@
+{
+  "key.category.spell": "Wynncraft Spell Caster",
+  "key.wynncraft-spell-caster.spell.first": "Использовать 1-е заклинание",
+  "key.wynncraft-spell-caster.spell.second": "Использовать 1-е заклинание",
+  "key.wynncraft-spell-caster.spell.third": "Использовать 1-е заклинание",
+  "key.wynncraft-spell-caster.spell.fourth": "Использовать 1-е заклинание",
+  "key.wynncraft-spell-caster.spell.melee": "Удар оружеем ближнего боя",
+  "key.wynncraft-spell-caster.config": "Открыть конфигурацию",
+
+  "screen.wynncraft-spell-caster.config.title" : "Wynncraft Spell Caster Конфигурация",
+  "config.wynncraft-spell-caster.option.left-interval_ms": "Задержка Левого Клика [ms]",
+  "config.wynncraft-spell-caster.option.right-interval_ms": "Задержка Правого Клика [ms]"
+}
