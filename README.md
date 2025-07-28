@@ -1,16 +1,13 @@
 # Wynncraft Spell Caster
----
 This mod adds configurable spell macros to the game. 
 The keybinds for each spell can be set in the keybinds menu.
 
-To open the config either set a settings keybind or navigate through the mod menu.
-
-The click interval is how long to wait after a click.
+Additionally, a keybind for melee hits can be set, which can be configured to repeat.
 
 Archer is detected automatically if you're holding a bow.
 
-## Installation and Use:
 ---
+## Installation and Use:
 To install simply download the [latest release jar](https://github.com/Freeder1k/Wynncraft-Spell-Caster/releases) and put it in your mods folder.
 
 **This mod runs on Minecraft Fabric 1.21 - 1.21.8.**
@@ -18,3 +15,11 @@ To install simply download the [latest release jar](https://github.com/Freeder1k
 Additionally, the following mods are required:
 - [Cloth Config API](https://modrinth.com/mod/cloth-config)
 - [Mod Menu](https://modrinth.com/mod/modmenu) (Optional)
+
+---
+## Options:
+The configuration menu can be opened through a keybind (default: "[") or by navigating through Mod Menu.
+Following options are available:
+- Left Click Interval [ms] - Set the amount of milliseconds to wait after a left click.
+- Right Click Interval [ms] - Set the amount of milliseconds to wait after a right click.
+- Repeat Melee Attacks [Yes/No] - Repeat melee hits if the melee button stays pressed.
