@@ -14,6 +14,7 @@ To install simply download the [latest release jar](https://github.com/Freeder1k
 
 Additionally, the following mods are required:
 - [Cloth Config API](https://modrinth.com/mod/cloth-config)
+- [Fabric API](https://modrinth.com/mod/fabric-api)
 - [Mod Menu](https://modrinth.com/mod/modmenu) (Optional)
 
 ---
