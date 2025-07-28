@@ -8,6 +8,11 @@
   "key.wynncraft-spell-caster.config": "Open Config",
 
   "screen.wynncraft-spell-caster.config.title" : "Wynncraft Spell Caster Config",
-  "config.wynncraft-spell-caster.option.left-interval_ms": "Left Click Interval [ms]",
-  "config.wynncraft-spell-caster.option.right-interval_ms": "Right Click Interval [ms]"
+  "config.wynncraft-spell-caster.category.general" : "General Config",
+  "config.wynncraft-spell-caster.option.left-interval-ms": "Left Click Interval [ms]",
+  "config.wynncraft-spell-caster.option.right-interval-ms": "Right Click Interval [ms]",
+  "config.wynncraft-spell-caster.option.repeat-melee": "Repeat Melee Attacks",
+  "config.wynncraft-spell-caster.option.left-interval-ms-tooltip": "Set the amount of milliseconds to wait after a left click.",
+  "config.wynncraft-spell-caster.option.right-interval-ms-tooltip": "Set the amount of milliseconds to wait after a right click.",
+  "config.wynncraft-spell-caster.option.repeat-melee-tooltip": "Repeat melee hits if the melee button stays pressed."
 }

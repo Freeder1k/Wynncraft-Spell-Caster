@@ -50,13 +50,39 @@ public class Config {
     public static Screen createConfigScreen(Screen parent) {
         ConfigBuilder builder = ConfigBuilder.create().setParentScreen(parent).setTitle(Text.translatable("screen.wynncraft-spell-caster.config.title"));
 
-        ConfigCategory general = builder.getOrCreateCategory(Text.translatable("General Config"));
+        ConfigCategory general = builder.getOrCreateCategory(Text.translatable("config.wynncraft-spell-caster.category.general"));
 
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-        general.addEntry(entryBuilder.startIntField(Text.translatable("config.wynncraft-spell-caster.option.left-interval_ms"), config_data.left_interval_ms).setDefaultValue(100).setTooltip(Text.of("Set the amount of milliseconds to wait after a left click.")).setSaveConsumer(newValue -> config_data.left_interval_ms = newValue).build());
+        general.addEntry(entryBuilder.startIntField(
+                                Text.translatable("config.wynncraft-spell-caster.option.left-interval-ms"),
+                                config_data.left_interval_ms
+                        )
+                        .setDefaultValue(100)
+                        .setTooltip(Text.translatable("config.wynncraft-spell-caster.option.left-interval-ms-tooltip"))
+                        .setSaveConsumer(newValue -> config_data.left_interval_ms = newValue)
+                        .build()
+        );
 
-        general.addEntry(entryBuilder.startIntField(Text.translatable("config.wynncraft-spell-caster.option.right-interval_ms"), config_data.right_interval_ms).setDefaultValue(100).setTooltip(Text.of("Set the amount of milliseconds to wait after a right click.")).setSaveConsumer(newValue -> config_data.right_interval_ms = newValue).build());
+        general.addEntry(entryBuilder.startIntField(
+                                Text.translatable("config.wynncraft-spell-caster.option.right-interval-ms"),
+                                config_data.right_interval_ms
+                        )
+                        .setDefaultValue(100)
+                        .setTooltip(Text.translatable("config.wynncraft-spell-caster.option.right-interval-ms-tooltip"))
+                        .setSaveConsumer(newValue -> config_data.right_interval_ms = newValue)
+                        .build()
+        );
+
+        general.addEntry(entryBuilder.startBooleanToggle(
+                                Text.translatable("config.wynncraft-spell-caster.option.repeat-melee"),
+                                config_data.repeat_melee
+                        )
+                        .setDefaultValue(false)
+                        .setTooltip(Text.translatable("config.wynncraft-spell-caster.option.repeat-melee-tooltip"))
+                        .setSaveConsumer(newValue -> config_data.repeat_melee = newValue)
+                        .build()
+        );
 
         builder.setSavingRunnable(config_data::save);
 
@@ -66,10 +92,12 @@ public class Config {
     public static class ConfigData {
         public int left_interval_ms;
         public int right_interval_ms;
+        public boolean repeat_melee;
 
-        public ConfigData(int left_interval_ms, int right_interval_ms, boolean invert_clicks) {
+        public ConfigData(int left_interval_ms, int right_interval_ms, boolean repeat_melee) {
             this.left_interval_ms = left_interval_ms;
             this.right_interval_ms = right_interval_ms;
+            this.repeat_melee = repeat_melee;
         }
 
         public static ConfigData getDefault() {

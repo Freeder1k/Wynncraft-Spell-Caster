@@ -4,10 +4,15 @@
   "key.wynncraft-spell-caster.spell.second": "Использовать 1-е заклинание",
   "key.wynncraft-spell-caster.spell.third": "Использовать 1-е заклинание",
   "key.wynncraft-spell-caster.spell.fourth": "Использовать 1-е заклинание",
-  "key.wynncraft-spell-caster.spell.melee": "Удар оружеем ближнего боя",
+  "key.wynncraft-spell-caster.spell.melee": "Удар оружием ближнего боя",
   "key.wynncraft-spell-caster.config": "Открыть конфигурацию",
 
   "screen.wynncraft-spell-caster.config.title" : "Wynncraft Spell Caster Конфигурация",
-  "config.wynncraft-spell-caster.option.left-interval_ms": "Задержка Левого Клика [ms]",
-  "config.wynncraft-spell-caster.option.right-interval_ms": "Задержка Правого Клика [ms]"
+  "config.wynncraft-spell-caster.category.general": "Общие настройки",
+  "config.wynncraft-spell-caster.option.left-interval-ms": "Задержка Левого Клика [ms]",
+  "config.wynncraft-spell-caster.option.right-interval-ms": "Задержка Правого Клика [ms]",
+  "config.wynncraft-spell-caster.option.repeat-melee": "Повтор Ударов Ближнего Боя",
+  "config.wynncraft-spell-caster.option.left-interval-ms-tooltip": "Задает количество миллисекунд задержки после левого клика.",
+  "config.wynncraft-spell-caster.option.right-interval-ms-tooltip": "Задает количество миллисекунд задержки после правого клика.",
+  "config.wynncraft-spell-caster.option.repeat-melee-tooltip": "Повторяет удары ближнего боя, если кнопка атаки удерживается."
 }

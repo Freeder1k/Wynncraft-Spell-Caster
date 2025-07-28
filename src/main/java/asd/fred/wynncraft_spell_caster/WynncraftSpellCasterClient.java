@@ -53,11 +53,11 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
             client.setScreen(Config.createConfigScreen(client.currentScreen));
         }
 
-        checkSpellKey(spell1_key, spell1_clicks);
-        checkSpellKey(spell2_key, spell2_clicks);
-        checkSpellKey(spell3_key, spell3_clicks);
-        checkSpellKey(spell4_key, spell4_clicks);
-        checkSpellKey(melee_key, melee_clicks);
+        checkSpellKey(spell1_key, spell1_clicks, false);
+        checkSpellKey(spell2_key, spell2_clicks, false);
+        checkSpellKey(spell3_key, spell3_clicks, false);
+        checkSpellKey(spell4_key, spell4_clicks, false);
+        checkSpellKey(melee_key, melee_clicks, config_data.repeat_melee);
     }
 
     private void registerKeybinds() {
@@ -70,12 +70,13 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
         melee_key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.wynncraft-spell-caster.spell.melee", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "key.category.spell"));
     }
 
-    private void checkSpellKey(KeyBinding spell_key, Collection<Boolean> spell_clicks) {
+    private void checkSpellKey(KeyBinding spell_key, Collection<Boolean> spell_clicks, boolean repeatable) {
         if (spell_key.isPressed()) {
             if (clickQueue.isEmpty())
                 clickQueue.add_clicks(spell_clicks);
 
-            spell_key.setPressed(false);
+            if (!repeatable)
+                spell_key.setPressed(false);
         }
     }
 }
