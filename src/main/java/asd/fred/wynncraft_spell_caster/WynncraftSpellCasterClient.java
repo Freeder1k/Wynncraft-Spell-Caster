@@ -22,6 +22,7 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
     private static final List<Boolean> spell3_clicks = Arrays.asList(true, false, false);
     private static final List<Boolean> spell4_clicks = Arrays.asList(true, true, false);
     private static final List<Boolean> melee_clicks = List.of(false);
+    private static boolean check_melee = true;
     public static KeyBinding spell1_key, spell2_key, spell3_key, spell4_key, melee_key;
     public static KeyBinding config_key;
     public static Config.ConfigData config_data;
@@ -57,7 +58,13 @@ public class WynncraftSpellCasterClient implements ClientModInitializer, ClientL
         checkSpellKey(spell2_key, spell2_clicks, false);
         checkSpellKey(spell3_key, spell3_clicks, false);
         checkSpellKey(spell4_key, spell4_clicks, false);
-        checkSpellKey(melee_key, melee_clicks, config_data.repeat_melee);
+        if (check_melee)
+            checkSpellKey(melee_key, melee_clicks, config_data.repeat_melee);
+        // Wait a tick between melee checks
+        if (melee_key.isPressed())
+            check_melee = !check_melee;
+        else
+            check_melee = true;
     }
 
     private void registerKeybinds() {
